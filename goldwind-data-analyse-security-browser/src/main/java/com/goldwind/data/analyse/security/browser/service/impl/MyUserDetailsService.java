@@ -19,11 +19,13 @@ public class MyUserDetailsService implements UserDetailsService{
 	/**
 	 * 根据用户名查找用户信息
 	 */
+	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
 		logger.info("用户登录名："+username);
 		
-		return new User(username,"123123",AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+		
+		return new User(username,"123123",true,true,true,true,AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
 	}
 
 }
